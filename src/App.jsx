@@ -1,11 +1,13 @@
-import Button from "./components/Button";
+import MainPage from "./pages/MainPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <h1 className="text-3xl m-5 text-center">Hello world</h1>
-      <Button></Button>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
