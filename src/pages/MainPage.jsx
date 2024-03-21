@@ -1,6 +1,11 @@
+import SliderWrapper from "../components/SliderWrapper";
+import '@splidejs/react-splide/css/skyblue';
+
 const MainPage = () => {
   return(
-    <h1>Main Page</h1>
+    <>
+      <SliderWrapper/>
+    </>
   )
 }
 
