@@ -19,7 +19,7 @@ const Slides = () => {
       img: img1
     }
   ], []);
-  
+
   return (
     <>
       {
