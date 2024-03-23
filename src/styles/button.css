@@ -1,1 +1,12 @@
+.button, .btn.inverse:hover{
+    color: white;
+    background-color: #325273;
+    border-color: #43616c;
+    border-radius: 5px;
+}
 
+.btn:hover, .btn-inverse {
+    color: inherit;
+    background-color: transparent;
+    border-color: inherit;
+}
