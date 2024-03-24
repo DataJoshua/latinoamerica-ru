@@ -6,7 +6,10 @@ const MainPage = () => {
   return(
     <>
       <SliderWrapper/>
-        <Button/>
+      {/* asi seria lo correcto de probar el boton, no queremos tener que cambiar nada dentro del componente,
+      ya que este debe ser reutilizable, cambias el codigo afuera pero dentro del componente no */}
+      <Button label="LUCTUS SUSCRIPT IN" handleOnClick={() => alert("hello world")}/>
+      <Button label="BUTTON 2"/>
     </>
   )
 }
