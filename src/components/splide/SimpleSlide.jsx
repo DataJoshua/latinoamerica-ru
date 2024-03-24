@@ -10,8 +10,8 @@ const SimpleSlide = ({ description, label, img }) => {
           }}
               >
         <div className="absolute py-4 px-3 rounded-lg max-w-md z-10 bg-white opacity-[0.8] top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]">
-          <h1 className="text-xl text-center py-2">{label}</h1>
-          <p>{description}</p>
+          <h1 className="text-md sm:text-xl text-center py-2">{label}</h1>
+          <p className="text-sm sm:text-md">{description}</p>
         </div>
       </div>
     </>

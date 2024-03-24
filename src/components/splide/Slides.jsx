@@ -29,9 +29,9 @@ const Slides = () => {
               className="w-full h-full"
             >
               {val.video ? <SlideVideo video={val.video}/> : <SimpleSlide img={val.img} 
-                                                        label={val.label} 
-                                                        description={val.description}
-                                            />
+                                                                          label={val.label} 
+                                                                          description={val.description}
+                                                            />
               }
             </SplideSlide>
           </>
