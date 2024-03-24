@@ -1,7 +1,8 @@
 .button, .btn.inverse:hover{
+    padding: 10px 20px;
     color: white;
-    background-color: #325273;
-    border-color: #43616c;
+    border-color: #325273;
+    background-color: #43616c;
     border-radius: 5px;
 }
 

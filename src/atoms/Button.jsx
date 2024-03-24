@@ -1,11 +1,12 @@
 import "../styles/button.css"
-const Button = ({label}) => {
+const Button = ({label, handleOnClick}) => {
   return <button
-      className={button}
+      className={"button"}
       onClick={handleOnClick}
   >
-    {label}
+    LUCTUS SUSCRIPT IN
   </button>
+  //aqui le puedes remplazar por el label, pero le puse esa frase para q se vea el css mi amor
 }
 
 export default Button;
