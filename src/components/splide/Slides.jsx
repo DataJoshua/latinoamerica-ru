@@ -17,6 +17,11 @@ const Slides = () => {
       label: "Slide 2",
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
       img: img1
+    },
+    {
+      label: "Slide 3",
+      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
+      img: img1
     }
   ], []);
 
