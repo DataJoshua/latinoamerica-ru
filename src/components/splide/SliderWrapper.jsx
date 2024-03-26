@@ -1,22 +1,20 @@
 import { Splide, SplideTrack } from '@splidejs/react-splide';
 import Slides from './Slides';
-import { useRef } from 'react';
 
 const SliderWrapper = () => {
-  const currentSlide = useRef(null)
-
   const handleActiveSlide = (_e, activeSlide) => {
-    // Se encarga de ponerle stop al video del slide anterior (si lo hay) al cargarse un nuevo slide
-    if(currentSlide.current) {
-      currentSlide.current.pause()
-      currentSlide.current.currentTime = 0  
-    }
-
-    currentSlide.current = activeSlide.slide.querySelector("[data-splide-is-video-value]")
-
+    const slide = activeSlide.slide.querySelector("[data-splide-is-video-value]")
     // Cuando la slide actual contiene un video le pone play
-    if(currentSlide.current) {
-      currentSlide.current.play()
+    slide?.play()
+  }
+
+  const handleInactiveSlide = (_e, inactiveSlide) => {
+    const slide = inactiveSlide.slide.querySelector("[data-splide-is-video-value]")
+    
+    // Pone stop en la slide inactiva si en esta encuentra un tag de <video/>
+    if(slide) {
+      slide.pause()
+      slide.currentTime = 0
     }
   }
 
@@ -24,6 +22,7 @@ const SliderWrapper = () => {
     <>
       <div className="w-full h-full flex justify-center bg-slate-100">
         <Splide
+          onInactive={handleInactiveSlide}
           onActive={handleActiveSlide}
           className="w-full md:w-full h-[40vh] md:h-[50vh] xl:h-[60vh] 2xl:h-[70vh] overflow-hidden" 
           options={{
