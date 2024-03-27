@@ -1,5 +1,5 @@
 
-article {
+.article-wrapper {
     display: flex;
     align-items: stretch;
     padding: 20px;
@@ -50,6 +50,5 @@ article p {
 
 }
 article button{
-    width: 65%;
-    high: 60%;
+
 }
