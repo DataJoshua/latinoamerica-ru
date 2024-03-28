@@ -7,6 +7,7 @@ import SlideVideo from "./SlideVideo";
 const Slides = () => {
   const images = useMemo(()=> [
     {
+      id: 1,
       label: "Slide 2",
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
       img: img1,
@@ -14,6 +15,7 @@ const Slides = () => {
       handleOnClick: () => console.log("hello world")
     },
     {
+      id: 2,
       label: "Slide 3",
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
       img: img1,
@@ -27,6 +29,7 @@ const Slides = () => {
         images.map(val => (
           <>
             <SplideSlide
+              key={val.id}
               className="w-full h-full"
             >
               {val.video ? <SlideVideo video={val.video}/> : <SimpleSlide img={val.img} 
