@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
-const useGoogleFirebase = () => {
+const useFirebase = () => {
   const [db, setDb] = useState(null)
+  const [storage, setStorage] = useState(null)
 
   useEffect(()=> {
     const app = initializeApp({
@@ -16,9 +18,13 @@ const useGoogleFirebase = () => {
     })
 
     setDb(getFirestore(app))
+    setStorage(getStorage(app))
   }, [])
 
-  return db
+  return ({
+    db: db,
+    storage: storage
+  })
 }
 
-export default useGoogleFirebase;
+export default useFirebase;
