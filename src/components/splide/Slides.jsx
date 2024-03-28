@@ -7,15 +7,13 @@ import SlideVideo from "./SlideVideo";
 const Slides = () => {
   const images = useMemo(()=> [
     {
-      label: "Slide 2",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
+      label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, dicta!",
       img: img1,
       buttonLabel: "Click",
       handleOnClick: () => console.log("hello world")
     },
     {
-      label: "Slide 3",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iste asperiores numquam, suscipit delectus placeat nulla et labore error ducimus.",
+      label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, dicta!",
       img: img1,
       buttonLabel: "sample"
     }
@@ -31,7 +29,6 @@ const Slides = () => {
             >
               {val.video ? <SlideVideo video={val.video}/> : <SimpleSlide img={val.img} 
                                                                           label={val.label} 
-                                                                          description={val.description}
                                                                           buttonLabel={val.buttonLabel}
                                                                           handleOnClick={val.handleOnClick}
                                                             />
