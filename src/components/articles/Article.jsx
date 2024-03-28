@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/Article.css';
 import Button from "../../atoms/Button";
 
-const Article = ({ imgSrc, title, author, tag, description, fullStoryLink }) => (
+const Article = ({ imgSrc, title, author, tag, description }) => (
     <article className="article-wrapper">
         <img src={imgSrc} alt={title} />
         <div className="text-container">
@@ -13,7 +13,7 @@ const Article = ({ imgSrc, title, author, tag, description, fullStoryLink }) => 
                 <p>{tag}</p>
             </div>
             <p>{description}</p>
-            < Button label="Historia Completa"/>
+            <Button label="Historia Completa"/>
         </div>
     </article>
 );
