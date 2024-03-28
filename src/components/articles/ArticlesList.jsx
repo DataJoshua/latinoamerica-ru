@@ -1,6 +1,7 @@
 import React from 'react';
 import Article from './Article';
-import img1 from "../../assets/images/foto1.png";
+import img1 from "../../assets/images/sample.jpg";
+
 const ArticlesList = () => {
     const articles = [{
         imgSrc: img1,
