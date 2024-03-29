@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Article from './Article';
-import img1 from "../../assets/images/sample.jpg";
+import useFirebase from '../../hooks/firebase/useFirebase';
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ArticlesList = () => {
-    const articles = [{
-        imgSrc: img1,
-        title: 'Per Inceptos Himenaeos Donec Lacinia Mollis Vel',
-        author: 'Autor 1',
-        tag: 'Etiqueta 1',
-        description: 'Aliquam mauris morbi tristique orci sit amet sapien tincidunt ut rutrum dui tincidunt.\n' +
-            '\n' +
-            'Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis leo in…\n'
+    const [articles, setArticles] = useState()
+    const app = useFirebase()
 
-    }];
+    const toArray = (data) => {
+        const res = []
+        
+        data.forEach(val => res.push(val.data()))
+        
+        return res;
+    }
+    
+    useEffect(()=> {
+        (async () => {
+            const data = await getDocs(collection(getFirestore(app), "events"))
+
+            setArticles(toArray(data))
+        })()
+    }, [])
 
     return (
         <ul className="articles-grid">
-            {articles.map((article, index) => (
-                <li className={index > 0 && "secondary-article"} key={index}>
+            {articles?.map((article, index) => (
+                <li className={index > 0 ? "secondary-article" : ""} key={index}>
                     <Article {...article} />
                 </li>
             ))}
