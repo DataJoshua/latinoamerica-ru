@@ -38,6 +38,11 @@ const SliderWrapper = () => {
           <SplideTrack className="w-full h-full">
             <Slides/>
           </SplideTrack>
+
+          <div className="splide__arrows">
+            <button className="splide__arrow splide__arrow--prev"></button>
+            <button className="splide__arrow splide__arrow--next"></button>
+          </div>
         </Splide>
       </div>
     </>

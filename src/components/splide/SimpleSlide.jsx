@@ -1,6 +1,6 @@
 import Button from "../../atoms/Button";
 
-const SimpleSlide = ({ description, label, img, buttonLabel, handleOnClick }) => {
+const SimpleSlide = ({ label, img, buttonLabel, handleOnClick }) => {
   return (
     <>
       <div className="slide relative w-full h-full" 
@@ -11,9 +11,8 @@ const SimpleSlide = ({ description, label, img, buttonLabel, handleOnClick }) =>
             backgroundSize: "cover"
           }}
       >
-        <div className="absolute flex flex-col gap-4 py-4 px-3 rounded-lg max-w-md z-10 bg-white opacity-[0.8] top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]">
-          <h1 className="text-md sm:text-xl text-center py-2">{label}</h1>
-          <p className="text-sm sm:text-md">{description}</p>
+        <div className="text-sm sm:text-lg lg:text-xl absolute flex flex-col gap-4 py-4 px-3 rounded-lg w-[70%] lg:max-w-lg z-10 bg-white opacity-[0.8] top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]">
+          <h1 className="text-center py-2 text-xl">{label}</h1>
           <div className="flex justify-center">
             <Button label={buttonLabel} handleOnClick={handleOnClick}/>
           </div>
