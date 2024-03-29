@@ -9,19 +9,24 @@ const ArticlesList = () => {
 
     const toArray = (data) => {
         const res = []
-        
-        data.forEach(val => res.push(val.data()))
-        
+        data.forEach(val => {
+            const id = val.id
+            const obj = val.data()
+            obj["id"] = id
+
+            res.push(obj)
+        })
+
         return res;
     }
-    
+
     useEffect(()=> {
         (async () => {
             const data = await getDocs(collection(getFirestore(app), "events"))
 
             setArticles(toArray(data))
         })()
-    }, [])
+    }, [app])
 
     return (
         <ul className="articles-grid">
