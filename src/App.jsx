@@ -1,9 +1,9 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import CountriesPage from "./pages/CountriesPage";
 import EventsPage from "./pages/EventsPage";
 import MainPage from "./pages/MainPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./atoms/footer/Footer";
 
 const App = () => {
   return (
