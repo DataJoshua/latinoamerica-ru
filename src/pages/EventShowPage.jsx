@@ -9,14 +9,12 @@ const EventShowPage = () => {
   const app = useFirebase()
   const [event, setEvent] = useState()
 
-  const fetchSingleEvent = async () => {
-    const data = await getDoc(doc(getFirestore(app), "events", id))
-
-    setEvent(data.data());
-  }
-
   useEffect(()=> {
-    fetchSingleEvent()
+    (async () => {
+      const data = await getDoc(doc(getFirestore(app), "events", id))
+  
+      setEvent(data.data());
+    })()
   }, [app, id])
 
   return (
