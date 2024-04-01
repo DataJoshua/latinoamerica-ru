@@ -64,6 +64,11 @@
     justify-items: center;
     align-items: center;
 }
+
 .small-article{
     display:block;
+}
+
+.small-article-wrapper {
+    background-color: skyblue;
 }

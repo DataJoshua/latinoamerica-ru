@@ -81,7 +81,7 @@ const SmallArticles = () => {
         <ul className="articles-grid">
             {smallArticles.map((article, index) => (
                 <li className="small-article" key={index}>
-                    <Article {...article} />
+                    <Article {...article} isSmallComponent/>
                 </li>
             ))}
         </ul>
