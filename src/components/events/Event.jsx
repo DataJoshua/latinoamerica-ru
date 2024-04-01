@@ -7,7 +7,7 @@ const Event = ({ event }) => {
                         backgroundSize: "cover",
                         backgroundPosition: "center"
                       }}
-              className="max-h-[50px] lg:min-h-[80%] lg:max-h-none flex items-center justify-center py-[200px]"
+              className="max-h-[50px] lg:min-h-[80%] lg:max-h-none flex items-end sm:items-center justify-center py-[200px]"
       >
         <div className="relative max-w-[800px] py-6 px-7 rounded-lg opacity-layer">
          <div className="text-container relative z-10">
