@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import CountriesPage from "./pages/CountriesPage";
 import EventShowPage from "./pages/EventShowPage";
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/paises" element={<CountriesPage/>}></Route>
           <Route path="/event/:id" element={<EventShowPage/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
