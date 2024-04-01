@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useFirebase from "../hooks/firebase/useFirebase";
 import { doc, getDoc, getFirestore } from "@firebase/firestore";
-import Event from "../components/events/Event";
+import EventWrapper from "../components/events/EventWrapper.jsx"
 
 const EventShowPage = () => {
   const { id } = useParams()
@@ -19,7 +19,7 @@ const EventShowPage = () => {
 
   return (
     <>
-      {event ? <Event event={event}/> : <h1>Loading...</h1>}
+      {event ? <EventWrapper event={event}/> : <h1>Loading...</h1>}
     </>
   )
 }
