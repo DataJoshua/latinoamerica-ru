@@ -1,8 +1,8 @@
-import React from 'react';
-import Article from './Article';
+import React from "react";
+import Article from "./Article";
 import img1 from "../../assets/images/sample.jpg";
 
-const ArticlesList = () => {
+const MainArticle = () => {
     const articles = [{
         imgSrc: img1,
         title: 'Per Inceptos Himenaeos Donec Lacinia Mollis Vel',
@@ -13,16 +13,13 @@ const ArticlesList = () => {
             'Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis leo in…\n'
 
     }];
+    const mainArticle = articles[articles.length - 1];
 
     return (
-        <ul className="articles-grid">
-            {articles.map((article, index) => (
-                <li className={index > 0 && "secondary-article"} key={index}>
-                    <Article {...article} />
-                </li>
-            ))}
-        </ul>
+        <div className="main-article">
+            <Article {...mainArticle} />
+        </div>
     );
 };
 
-export default ArticlesList;
+export default MainArticle;

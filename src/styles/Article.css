@@ -10,7 +10,7 @@
     flex: 60%;
 }
 
-.articles-grid  {
+.main-article {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -49,11 +49,21 @@
     font-size: smaller;
     align-self: flex-start;
 }
-
 .article-wrapper.author-tag-container .separator {
     margin: 0 10px;
 }
 
 .article-wrapper p {
     max-width: 250px;
+}
+
+.articles-grid  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.small-article{
+    display:block;
 }
