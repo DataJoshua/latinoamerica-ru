@@ -1,13 +1,21 @@
 import SliderWrapper from "../components/splide/SliderWrapper";
 import '@splidejs/react-splide/css/skyblue';
-import ArticlesList from "../components/articles/ArticlesList";
+import MainArticle from "../components/articles/MainArticle";
+import {Link} from "react-router-dom";
+import Button from "../atoms/Button";
 
 const MainPage = () => {
     return(
         <>
             <SliderWrapper/>
             <br/>
-            <ArticlesList/>
+            <MainArticle/>
+            <br/>
+            <div className="flex justify-center items-center">
+            <Link to="/eventos">
+                <Button label="Ver mas eventos"/>
+            </Link>
+            </div>
         </>
     )
 }
