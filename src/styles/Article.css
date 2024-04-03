@@ -48,6 +48,7 @@
     font-weight: bold;
     font-size: smaller;
     align-self: flex-start;
+    align-items: center;
 }
 .article-wrapper.author-tag-container .separator {
     margin: 0 10px;
@@ -56,14 +57,31 @@
 .article-wrapper p {
     max-width: 250px;
 }
+.small-article-wrapper p {
+    line-height: 1.6;
+}
 
 .articles-grid  {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    column-gap: 1px;
+    row-gap: 20px;
     justify-items: center;
+    max-width: 55%;
+    margin: 0 auto;
     align-items: center;
 }
-.small-article{
-    display:block;
+.small-article-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    font-size: 14px;
+}
+.small-article-wrapper h2{
+    font-family: Georgia, serif;
 }
