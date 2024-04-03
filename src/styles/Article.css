@@ -84,4 +84,8 @@
 }
 .small-article-wrapper h2{
     font-family: Georgia, serif;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
 }
+
