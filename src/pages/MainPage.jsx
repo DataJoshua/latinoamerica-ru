@@ -2,10 +2,11 @@ import SliderWrapper from "../components/splide/SliderWrapper";
 import '@splidejs/react-splide/css/skyblue';
 import MainArticle from "../components/articles/MainArticle";
 import Button from "../atoms/Button";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
     const navigate = useNavigate()
+
     return(
         <>
             <SliderWrapper/>
