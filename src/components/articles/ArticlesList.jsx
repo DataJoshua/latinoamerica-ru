@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article";
 import img1 from "../../assets/images/sample.jpg";
 
-const SmallArticles = () => {
+const ArticlesList = () => {
     const articles = [{
         imgSrc: img1,
         title: 'Per Inceptos Himenaeos Donec Lacinia Mollis Vel',
@@ -87,4 +87,5 @@ const SmallArticles = () => {
         </ul>
     );
 }
-export default SmallArticles;
+
+export default ArticlesList;
