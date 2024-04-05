@@ -78,7 +78,7 @@ const SmallArticles = () => {
     const smallArticles = articles.slice(0, articles.length - 1);
 
     return (
-        <ul className="articles-grid">
+        <ul className="articles-grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
             {smallArticles.map((article, index) => (
                 <li className="small-article" key={index}>
                     <Article {...article} isSmallComponent={true} />

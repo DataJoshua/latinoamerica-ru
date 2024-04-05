@@ -63,11 +63,10 @@
 
 .articles-grid  {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     column-gap: 1px;
     row-gap: 20px;
     justify-items: center;
-    max-width: 55%;
+    max-width: 65%;
     margin: 0 auto;
     align-items: center;
 }
@@ -76,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 5px;
+    padding: 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 300px;
