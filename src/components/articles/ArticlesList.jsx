@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article";
 import img1 from "../../assets/images/sample.jpg";
 
-const SmallArticles = () => {
+const ArticlesList = () => {
     const articles = [{
         imgSrc: img1,
         title: 'Per Inceptos Himenaeos Donec Lacinia Mollis Vel',
@@ -81,10 +81,10 @@ const SmallArticles = () => {
         <ul className="articles-grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
             {smallArticles.map((article, index) => (
                 <li className="small-article" key={index}>
-                    <Article {...article} isSmallComponent={true} />
+                    <Article {...article} isSmallComponent />
                 </li>
             ))}
         </ul>
     );
 }
-export default SmallArticles;
+export default ArticlesList;
