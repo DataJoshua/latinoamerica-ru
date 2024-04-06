@@ -87,4 +87,5 @@ const ArticlesList = () => {
         </ul>
     );
 }
+
 export default ArticlesList;

@@ -18,12 +18,13 @@ const MainPage = () => {
             'Cras eget lacinia magna nunc ut est est cras aliquam erat sem at dapibus lorem luctus sed nunc sagittis leo in…\n'
 
     }), [])
+
     return(
         <>
             <SliderWrapper/>
             <br/>
-            <div className={"flex justify-center"}>
-                <Article {...articleSample}/>
+            <div className="flex justify-center">
+                <Article {...articleSample} />
             </div>
             <br/>
             <div className="flex justify-center items-center mb-5">
