@@ -9,6 +9,7 @@ import Article from "../components/articles/Article";
 const MainPage = () => {
     const navigate = useNavigate()
     const articleSample = useMemo(()=> ({
+        id: "sampleId",
         imgSrc: img1,
         title: 'Per Inceptos Himenaeos Donec Lacinia Mollis Vel',
         author: 'Autor 1',
