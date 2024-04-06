@@ -25,6 +25,7 @@ const Slides = () => {
         images.map(val => (
           <>
             <SplideSlide
+              key={val.id}
               className="w-full h-full"
             >
               {val.video ? <SlideVideo video={val.video}/> : <SimpleSlide img={val.img} 
