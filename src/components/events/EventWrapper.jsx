@@ -5,8 +5,8 @@ const EventWrapper = ({ event }) => {
   return ( 
     <>
       <Event event={event}/>
-        <Gallery/>
-    </> 
+      <Gallery/>
+    </>
   )
 }
  
