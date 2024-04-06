@@ -3,15 +3,15 @@ import '../../styles/Article.css';
 import Button from "../../atoms/Button";
 import { useNavigate } from 'react-router';
 
-const Article = ({ imgSrc, title, author, tag, description, id }) => {
-    const navigate = useNavigate()
+const Article = ({ imgSrc, title, author, tag, description, id, isSmallComponent = false }) => {
+    const navigate = useNavigate();
 
     const handleOnClick = (_e) => {
-        navigate(`event/${id}`)
+        navigate(`/eventos/${id}`)
     }
 
     return (
-        <article className="article-wrapper flex-col gap-5 sm:flex-row text-sm sm:text-lg">
+        <article className={`${isSmallComponent ? "small-article-wrapper" : ""} article-wrapper flex-col gap-5 sm:flex-row text-sm sm:text-lg`}>
             <div className="article-image-wrapper rounded-lg overflow-hidden">
                 <img className="article-img" src={imgSrc} alt={title} />
             </div>
@@ -27,6 +27,6 @@ const Article = ({ imgSrc, title, author, tag, description, id }) => {
             </div>
         </article>
     )
-};
+}
 
 export default Article;
