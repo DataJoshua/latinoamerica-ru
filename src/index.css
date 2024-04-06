@@ -28,13 +28,3 @@
   border-radius: 15px;
   z-index: 0;
 }
-
-.show-event-imgs {
-  display: flex;
-  justify-content: center;
-}
-.per-image {
-  padding: 10px;
-  width: 350px;
-  height: 220px;
-}
