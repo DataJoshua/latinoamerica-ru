@@ -7,8 +7,8 @@ function Gallery () {
 
     return (
         <>
-            <div className={"images"}>
-                {links.map(val => <img src={val} alt={"text here"}/>)}
+            <div className={"show-event-imgs"}>
+                {links.map(val => <img className={"per-image"} src={val} alt={"text here"}/>)}
             </div>
         </>
 
