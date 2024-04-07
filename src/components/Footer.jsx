@@ -15,6 +15,10 @@ const Footer =  () => {
         {
             url: "/paises",
             label: "Paises"
+        },
+        {
+            url: "/admin",
+            label: "Administrador"
         }
     ]
 
