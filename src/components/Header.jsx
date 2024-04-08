@@ -28,11 +28,12 @@ const Header = () => {
                 <LinkButton label="Home" path="/" currentPath={currentPath}/>
                 <LinkButton label="Eventos" path="/eventos" currentPath={currentPath}/>
                 <LinkButton label="Paises" path="/paises" currentPath={currentPath}/>
+                <LinkButton label="Formulario" path="/formulario" currentPath={currentPath}/>
               </ul>
             </div>
           </div>
         </nav>
-      </header>        
+      </header>
     </>
   )
 }

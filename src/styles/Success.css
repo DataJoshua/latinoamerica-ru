@@ -1,0 +1,14 @@
+.success-container {
+    width: 450px;
+    max-width: 80%;
+    position: absolute;
+    top: 35%;
+    right: 55%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: rgba(247, 247, 247);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #000;
+    z-index: 1000;
+}

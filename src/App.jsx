@@ -4,23 +4,31 @@ import CountriesPage from "./pages/CountriesPage";
 import EventShowPage from "./pages/EventShowPage";
 import EventsPage from "./pages/EventsPage";
 import MainPage from "./pages/MainPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
+import FormPage from "./pages/FormPage";
 
 const App = () => {
   return (
-    <>
       <BrowserRouter>
-        <Header/>
         <Routes>
-          <Route path="/" element={<MainPage/>}/>
-          <Route path="/eventos" element={<EventsPage/>}></Route>
-          <Route path="/paises" element={<CountriesPage/>}></Route>
-          <Route path="/eventos/:id" element={<EventShowPage/>}></Route>
+          <Route path="/formulario" element={<FormPage/>} />
+          <Route path="/*" element={<Layout/>} />
         </Routes>
-        <Footer/>
       </BrowserRouter>
-    </>
   );
 }
+
+const Layout = () => (
+    <>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<MainPage/>}/>
+        <Route path="/eventos" element={<EventsPage/>}/>
+        <Route path="/paises" element={<CountriesPage/>}/>
+        <Route path="/eventos/:id" element={<EventShowPage/>}/>
+      </Routes>
+      <Footer/>
+    </>
+);
 
 export default App;
