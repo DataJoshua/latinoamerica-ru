@@ -27,9 +27,9 @@ const Form = ({ setUser }) => {
 
   return ( 
     <>
-      <div className="form-wrapper">
+      <div className="form-wrapper bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')]">
         {error && <Toast msg={error} setError={setError}/>}
-        <form className="max-w-sm mx-auto" onSubmit={handleOnSubmit}>
+        <form className="max-w-sm mx-auto bg-white p-4 rounded-lg" onSubmit={handleOnSubmit}>
           <div className="mb-5">
             <label className="input-label">Email: </label>
             <input type="email" id="email" className="input-field" placeholder="sample@latinos.com" required />

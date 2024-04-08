@@ -1,5 +1,5 @@
 .form-wrapper {
-  @apply relative py-[200px] px-5 bg-blue-300;
+  @apply relative py-[200px] px-5 bg-slate-500;
 }
 
 .input-label {
