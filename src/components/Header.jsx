@@ -25,9 +25,9 @@ const Header = () => {
             <ToggleButton/>
             <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
               <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                <LinkButton label="Home" path="/" currentPath={currentPath}/>
+                {/* <LinkButton label="Home" path="/" currentPath={currentPath}/>
                 <LinkButton label="Eventos" path="/eventos" currentPath={currentPath}/>
-                <LinkButton label="Paises" path="/paises" currentPath={currentPath}/>
+                <LinkButton label="Paises" path="/paises" currentPath={currentPath}/> */}
                 <LinkButton label="Formulario" path="/formulario" currentPath={currentPath}/>
               </ul>
             </div>
