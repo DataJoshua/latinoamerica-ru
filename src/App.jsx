@@ -4,8 +4,9 @@ import CountriesPage from "./pages/CountriesPage";
 import EventShowPage from "./pages/EventShowPage";
 import EventsPage from "./pages/EventsPage";
 import MainPage from "./pages/MainPage";
-import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FormPage from "./pages/FormPage";
+import AdminPage from "./pages/admin/AdminPage";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const Layout = () => (
         <Route path="/eventos" element={<EventsPage/>}/>
         <Route path="/paises" element={<CountriesPage/>}/>
         <Route path="/eventos/:id" element={<EventShowPage/>}/>
+        <Route path="/admin" element={<AdminPage/>}></Route>
       </Routes>
       <Footer/>
     </>
