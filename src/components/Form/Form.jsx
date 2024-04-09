@@ -36,7 +36,8 @@ function Form() {
     }
 
     const maskPhoneNumber = (rawPhoneNumber) => {
-        return rawPhoneNumber.replace(/\D/g, "");
+        return rawPhoneNumber.replace(/[A-Za-z]/g, "")
+                             .replace(/[!@#$%^&*_-]/g, "");
     };
 
     const handleFirstNameChange = (e) => {
