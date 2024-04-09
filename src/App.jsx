@@ -11,26 +11,18 @@ import AdminPage from "./pages/admin/AdminPage";
 const App = () => {
   return (
       <BrowserRouter>
-        <Routes>
-          <Route path="/formulario" element={<FormPage/>} />
-          <Route path="/*" element={<Layout/>} />
-        </Routes>
+        <Header/>
+          <Routes>
+            <Route path="/formulario" element={<FormPage/>} />
+            <Route path="/" element={<MainPage/>}/>
+            <Route path="/eventos" element={<EventsPage/>}/>
+            <Route path="/paises" element={<CountriesPage/>}/>
+            <Route path="/eventos/:id" element={<EventShowPage/>}/>
+            <Route path="/admin" element={<AdminPage/>}></Route>
+          </Routes>
+        <Footer/>
       </BrowserRouter>
   );
 }
-
-const Layout = () => (
-    <>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/eventos" element={<EventsPage/>}/>
-        <Route path="/paises" element={<CountriesPage/>}/>
-        <Route path="/eventos/:id" element={<EventShowPage/>}/>
-        <Route path="/admin" element={<AdminPage/>}></Route>
-      </Routes>
-      <Footer/>
-    </>
-);
 
 export default App;

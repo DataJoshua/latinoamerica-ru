@@ -10,14 +10,13 @@ import img7 from "../assets/imagesF/img7.jpeg";
 import img8 from "../assets/imagesF/img9.jpeg";
 
 import "../styles/Carousel.css";
-import Form from "../components/Form/Form";
 
 const FormPage = () => {
     const images = [
         {
             image: img1,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -25,7 +24,7 @@ const FormPage = () => {
         {
             image: img2,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -33,7 +32,7 @@ const FormPage = () => {
         {
             image: img3,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -41,7 +40,7 @@ const FormPage = () => {
         {
             image: img4,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -49,7 +48,7 @@ const FormPage = () => {
         {
             image: img5,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -57,7 +56,7 @@ const FormPage = () => {
         {
             image: img6,
             author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
+            title: 'DIA DE LATINOAMERICA',
             topic: '',
             description:
                 'Te esparamos, no faltes :)'
@@ -84,9 +83,7 @@ const FormPage = () => {
     ];
     return (
         <div>
-        <Carousel images={images}/>
-        <br/>
-        <Form/>
+            <Carousel images={images}/>
         </div>
     );
 }

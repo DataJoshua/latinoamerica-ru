@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import CarouselItem from './CarouselItem';
 import ThumbnailItem from './ThumbnailItem';
 import "../../styles/Carousel.css";
+import Form from '../Form/Form';
 
 function Carousel({ images }) {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -10,7 +11,6 @@ function Carousel({ images }) {
     const carouselDomRef = useRef(null);
     const SliderDomRef = useRef(null);
     const thumbnailBorderDomRef = useRef(null);
-    const timeDomRef = useRef(null);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -25,12 +25,11 @@ function Carousel({ images }) {
         const carouselDom = carouselDomRef.current;
         const SliderDom = SliderDomRef.current;
         const thumbnailBorderDom = thumbnailBorderDomRef.current;
-        const timeDom = timeDomRef.current;
 
         thumbnailBorderDom.appendChild(thumbnailBorderDom.querySelector('.item'));
 
         let timeRunning = 3000;
-        let timeAutoNext = 4000;
+        let timeAutoNext = 5000;
 
         nextDom.onclick = function(){
             showSlider('next');
@@ -83,6 +82,7 @@ function Carousel({ images }) {
 
     return (
         <div className="carousel" ref={carouselDomRef}>
+            <Form/>
             <div className="list" ref={SliderDomRef}>
                 {images.map((image, index) => (
                     <CarouselItem
