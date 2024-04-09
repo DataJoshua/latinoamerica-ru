@@ -8,7 +8,7 @@ function CarouselItem({ image, author, title, topic, description }) {
                 <div className="author">{author}</div>
                 <div className="title text-4xl md:text-6xl">{title}</div>
                 <div className="topic">{topic}</div>
-                <div className="des">{description}</div>
+                <div className="des hidden sm:block">{description}</div>
             </div>
         </div>
     );
