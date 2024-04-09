@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import Button from "../../atoms/Button.jsx";
 import "../../styles/Form.css";
 import "../../styles/Success.css"
+import Spinner from '../../atoms/Spinner.jsx';
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -13,6 +15,25 @@ function Form() {
     const [faculty, setFaculty] = useState('');
     const [attendDay, setAttendDay] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false); // Estado para controlar si el formulario ha sido enviado
+    const [isLoading, setIsLoading] = useState(false)
+
+    const getCurrentDate = (separator = '-') => {
+        let newDate = new Date();
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+        let hours = newDate.getHours();
+        let minutes = newDate.getMinutes();
+        let seconds = newDate.getSeconds();
+    
+        if (month < 10) month = '0' + month;
+        if (date < 10) date = '0' + date;
+        if (hours < 10) hours = '0' + hours;
+        if (minutes < 10) minutes = '0' + minutes;
+        if (seconds < 10) seconds = '0' + seconds;
+    
+        return `${year}${separator}${month}${separator}${date} ${hours}:${minutes}:${seconds}`;
+    }
 
     const handleFirstNameChange = (e) => {
         setFirstName(capitalizeFirstLetter(e.target.value));
@@ -27,8 +48,9 @@ function Form() {
         try {
             const day1Value = attendDay === "Día 1" || attendDay === "Ambos días" ? "Sí" : "No";
             const day2Value = attendDay === "Día 2" || attendDay === "Ambos días" ? "Sí" : "No";
+            setIsLoading(true)
 
-            const response = await fetch('https://sheet.best/api/sheets/f141ff2c-2e7f-4fcb-9141-279bfb09ac71', {
+            const response = await fetch(process.env.REACT_APP_SHEET_BEST_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,17 +61,21 @@ function Form() {
                     Telefono: phoneNumber,
                     Facultad: faculty,
                     "Dia 1": day1Value,
-                    "Dia 2": day2Value
+                    "Dia 2": day2Value,
+                    Fecha: getCurrentDate()
                 })
             });
 
             if (response.ok) {
                 console.log('Formulario enviado con éxito');
+                setIsLoading(false)
                 setFormSubmitted(true);
             } else {
+                setIsLoading(false)
                 console.error('Error al enviar el formulario:', response.statusText);
             }
         } catch (error) {
+            setIsLoading(false)
             console.error('Error al enviar el formulario:', error);
         }
     };
@@ -68,7 +94,7 @@ function Form() {
             {!formSubmitted ? (
                 <div className="form-container scale-[0.90] sm:scale-100 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:translate-x-[0px] sm:translate-y-[0px] sm:left-[10%] sm:top-[17%] lg:left-[15%]">
                     <h1 className="font-bold text-center text-lg py-1">Registrate, te esperamos :)</h1>
-                    <form onSubmit={handleSubmit} className="form">
+                    <form className="form">
                         <div className="form-group">
                             <label>Nombre:</label>
                             <input
@@ -95,13 +121,11 @@ function Form() {
                         </div>
                         <div className="form-group">
                             <label>Facultad:</label>
-                            <select
+                            <input
                                 value={faculty}
                                 onChange={(e) => setFaculty(e.target.value)}
-                            >
-                                <option value="">Seleccione una facultad</option>
-                                {/* Aquí puedes agregar opciones de facultades */}
-                            </select>
+                                required
+                            />
                         </div>
                         <div className="form-group">
                             <label>Asistiré el día:</label>
@@ -115,14 +139,14 @@ function Form() {
                                 <option value="Ambos días">Ambos días</option>
                             </select>
                         </div>
-                        <button type="submit" className="submit-button">Enviar</button>
+                        {isLoading ? <Spinner isSmall/> : <Button handleOnClick={handleSubmit} label="Enviar" />}
                     </form>
                 </div>
             ) : (
-                <div className="success-container">
-                    <h2>¡Formulario enviado con éxito!, por favor se responsable y no hagas spam :(</h2>
-                    <p>Te esperamos para que nos acompanes en este maravilloso evento</p>
-                    <button className="submit-button" onClick={handleResetForm}>Enviar otro formulario</button>
+                <div className="success-container scale-[0.90] sm:scale-100 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:translate-x-[0px] sm:translate-y-[0px] sm:left-[10%] sm:top-[17%] lg:left-[15%] flex gap-3 flex-col">
+                    <h2 className="sm:text-lg">¡Formulario enviado con éxito!, por favor se responsable y no hagas spam :(</h2>
+                    <p className="sm:text-lg">Te esperamos para que nos acompanes en este maravilloso evento</p>
+                    <Button handleOnClick={handleResetForm} label="Enviar otro formulario"/>
                 </div>
             )}
         </div>
