@@ -67,7 +67,7 @@ function Form() {
         <div className="">
             {!formSubmitted ? (
                 <div className="form-container top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:translate-x-[0px] sm:translate-y-[0px] sm:left-[10%] sm:top-[17%] lg:left-[15%]">
-                    <h1 className="text-xl font-bold text-center py-2">Formulario de Registro</h1>
+                    <h1 className="font-bold text-center text-lg py-1">Formulario de Registro</h1>
                     <form onSubmit={handleSubmit} className="form">
                         <div className="form-group">
                             <label>Nombre:</label>
