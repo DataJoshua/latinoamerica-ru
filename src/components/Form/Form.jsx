@@ -12,7 +12,7 @@ function Form() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [faculty, setFaculty] = useState('');
+    const [university, setUniversity] = useState('');
     const [attendDay, setAttendDay] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false); // Estado para controlar si el formulario ha sido enviado
     const [isLoading, setIsLoading] = useState(false)
@@ -25,13 +25,13 @@ function Form() {
         let hours = newDate.getHours();
         let minutes = newDate.getMinutes();
         let seconds = newDate.getSeconds();
-    
+
         if (month < 10) month = '0' + month;
         if (date < 10) date = '0' + date;
         if (hours < 10) hours = '0' + hours;
         if (minutes < 10) minutes = '0' + minutes;
         if (seconds < 10) seconds = '0' + seconds;
-    
+
         return `${year}${separator}${month}${separator}${date} ${hours}:${minutes}:${seconds}`;
     }
 
@@ -64,7 +64,7 @@ function Form() {
                     Nombre: firstName,
                     Apellido: lastName,
                     Telefono: phoneNumber,
-                    Facultad: faculty,
+                    Universidad: university,
                     "Dia 1": day1Value,
                     "Dia 2": day2Value,
                     Fecha: getCurrentDate()
@@ -89,7 +89,7 @@ function Form() {
         setFirstName('');
         setLastName('');
         setPhoneNumber('');
-        setFaculty('');
+        setUniversity('');
         setAttendDay('');
         setFormSubmitted(false);
     };
@@ -101,7 +101,7 @@ function Form() {
                     <h1 className="font-bold text-center text-lg py-1">Registrate, te esperamos :)</h1>
                     <form onSubmit={handleSubmit} className="form">
                         <div className="form-group">
-                            <label>Nombre:</label>
+                            <label>Nombre/Имя:</label>
                             <input
                                 type="text"
                                 value={firstName}
@@ -109,7 +109,7 @@ function Form() {
                                 required/>
                         </div>
                         <div className="form-group">
-                            <label>Apellido:</label>
+                            <label>Apellido/Фамиля:</label>
                             <input
                                 type="text"
                                 value={lastName}
@@ -117,7 +117,7 @@ function Form() {
                                 required/>
                         </div>
                         <div className="form-group">
-                            <label>Teléfono:</label>
+                            <label>Teléfono/Номер Телефона:</label>
                             <input
                                 type="text"
                                 value={phoneNumber}
@@ -126,12 +126,21 @@ function Form() {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Facultad:</label>
-                            <input
-                                value={faculty}
-                                onChange={(e) => setFaculty(e.target.value)}
-                                required
-                            />
+                            <label>Universidad/Университет:</label>
+                            <select
+                                value={university}
+                                onChange={(e) => setUniversity(e.target.value)}
+                                >
+                                <option value="">Selecciona su universidad</option>
+                                <option value="Казанский государственный медицинский университет">КГМУ</option>
+                                <option value="Казанский (Приволжский) федеральный университет">КФУ</option>
+                                <option value="Казанский национальный исследовательский технологический университет">КНИТУ</option>
+                                <option value="Казанский инновационный университет имени В.Г. Тимирясова (ИЭУП)">КИУ</option>
+                                <option value="Казанский национальный исследовательский технический университет им. А.Н.Туполева-КАИ">КАИ</option>
+                                <option value="Казанский государственный энергетический университет">КГЭУ</option>
+                                <option value="Поволжский государственный университет физической культуры, спорта и туризма">ПГУФКСиТ</option>
+                                <option value="Другой университет">Другой университет</option>
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Asistiré el día:</label>
@@ -140,9 +149,9 @@ function Form() {
                                 onChange={(e) => setAttendDay(e.target.value)}
                             >
                                 <option value="">Seleccione un día</option>
-                                <option value="Día 1">Día 1</option>
-                                <option value="Día 2">Día 2</option>
-                                <option value="Ambos días">Ambos días</option>
+                                <option value="Día 1">Día 1/День1</option>
+                                <option value="Día 2">Día 2/День2</option>
+                                <option value="Ambos días">Ambos días/Оба дня</option>
                             </select>
                         </div>
                         {isLoading ? <Spinner isSmall/> : <Button type="submit" label="Enviar" />}
