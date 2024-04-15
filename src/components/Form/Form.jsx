@@ -142,7 +142,7 @@ function Form() {
                             </select>
                         </div>
                         <div className="form-group">
-                            <label>Asistiré el día:</label>
+                            <label>Asistiré el día/Я буду присутствовать в день:</label>
                             <select
                                 value={attendDay}
                                 onChange={(e) => setAttendDay(e.target.value)}
