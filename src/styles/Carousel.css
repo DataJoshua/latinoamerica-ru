@@ -39,19 +39,21 @@ header a {
     object-fit: cover;
 }
 
-.carousel .list .item .content {
-    text-shadow: 0 5px 10px #0004;
+.carousel-title .list .item .content {
+    text-shadow: 0 5px 10px rgba(54, 51, 51, 0.582);
 }
 
-.carousel .list .item .author {
+.carousel-title .content .author {
     font-weight: bold;
     letter-spacing: 10px;
+    text-shadow: 4px 4px #2c2424a6;
 }
 
-.carousel .list .item .title,
-.carousel .list .item .topic {
+.carousel-title .content .title,
+.carousel-title .content .topic {
     font-weight: bold;
     line-height: 1.3em;
+    text-shadow: 4px 4px #2c2424a6;
 }
 
 .carousel .list .item .topic {
@@ -154,11 +156,7 @@ header a {
     z-index: 1;
 }
 
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons {
+.show-text-animation {
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
@@ -173,21 +171,17 @@ header a {
     }
 }
 
-.carousel .list .item:nth-child(1) .content .title {
-    animation-delay: 1.2s!important;
+/* .carousel-title .content .title {
+    animation-delay: 1.2s !important;
 }
 
-.carousel .list .item:nth-child(1) .content .topic {
-    animation-delay: 1.4s!important;
+.carousel-title .content .topic {
+    animation-delay: 1.4s !important;
 }
 
-.carousel .list .item:nth-child(1) .content .des {
-    animation-delay: 1.6s!important;
-}
-
-.carousel .list .item:nth-child(1) .content .buttons {
-    animation-delay: 1.8s!important;
-}
+.carousel-title .content .des {
+    animation-delay: 1.6s !important;
+} */
 
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img {
@@ -294,13 +288,13 @@ header a {
     pointer-events: none;
 }
 
-.carousel.prev .list .item:nth-child(2) .content .author,
+/* .carousel.prev .list .item:nth-child(2) .content .author,
 .carousel.prev .list .item:nth-child(2) .content .title,
 .carousel.prev .list .item:nth-child(2) .content .topic,
 .carousel.prev .list .item:nth-child(2) .content .des,
 .carousel.prev .list .item:nth-child(2) .content .buttons {
     animation: contentOut 1.5s linear 1 forwards!important;
-}
+} */
 
 @keyframes contentOut {
     to {

@@ -3,6 +3,7 @@ import CarouselItem from './CarouselItem';
 import ThumbnailItem from './ThumbnailItem';
 import "../../styles/Carousel.css";
 import Form from '../Form/Form';
+import Title from './Title';
 
 function Carousel({ images }) {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -83,15 +84,12 @@ function Carousel({ images }) {
     return (
         <div className="carousel" ref={carouselDomRef}>
             <Form/>
+            <Title/>
             <div className="list" ref={SliderDomRef}>
                 {images.map((image, index) => (
                     <CarouselItem
                         key={index}
                         image={image.image}
-                        author={image.author}
-                        title={image.title}
-                        topic={image.topic}
-                        description={image.description}
                     />
                 ))}
             </div>
