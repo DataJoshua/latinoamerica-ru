@@ -3,6 +3,7 @@ import Button from "../../atoms/Button.jsx";
 import "../../styles/Form.css";
 import "../../styles/Success.css"
 import Spinner from '../../atoms/Spinner.jsx';
+import universidades from './universidades.json';
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -33,6 +34,10 @@ function Form() {
         if (seconds < 10) seconds = '0' + seconds;
 
         return `${year}${separator}${month}${separator}${date} ${hours}:${minutes}:${seconds}`;
+    }
+
+    const handleUniversityChange = (e) => {
+        setUniversity(e.target.value);
     }
 
     const maskPhoneNumber = (rawPhoneNumber) => {
@@ -129,17 +134,11 @@ function Form() {
                             <label>Universidad/Университет:</label>
                             <select
                                 value={university}
-                                onChange={(e) => setUniversity(e.target.value)}
-                                >
-                                <option value="">Selecciona su universidad</option>
-                                <option value="Казанский государственный медицинский университет">КГМУ</option>
-                                <option value="Казанский (Приволжский) федеральный университет">КФУ</option>
-                                <option value="Казанский национальный исследовательский технологический университет">КНИТУ</option>
-                                <option value="Казанский инновационный университет имени В.Г. Тимирясова (ИЭУП)">КИУ</option>
-                                <option value="Казанский национальный исследовательский технический университет им. А.Н.Туполева-КАИ">КАИ</option>
-                                <option value="Казанский государственный энергетический университет">КГЭУ</option>
-                                <option value="Поволжский государственный университет физической культуры, спорта и туризма">ПГУФКСиТ</option>
-                                <option value="Другой университет">Другой университет</option>
+                                onChange={handleUniversityChange}
+                            >
+                                {universidades.map((option, index) => (
+                                    <option key={index} value={option.value}>{option.label}</option>
+                                ))}
                             </select>
                         </div>
                         <div className="form-group">
