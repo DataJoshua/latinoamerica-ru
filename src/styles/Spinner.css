@@ -14,6 +14,20 @@
   animation: morp 2s infinite;
 }
 
+.small-spinner {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.small-spinner::after{
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  animation: morp 2s infinite;
+}
+
 @keyframes morp{
   0%, 100%{
     border-radius: 50%;

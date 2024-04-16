@@ -4,21 +4,25 @@ import { nanoid } from "nanoid"
 const Footer =  () => {
 
     const links = [
+        // {
+        //     url: "/",
+        //     label: "Home"
+        // },
+        // {
+        //     url: "/eventos",
+        //     label: "Eventos"
+        // },
+        // {
+        //     url: "/paises",
+        //     label: "Paises"
+        // },
+        // {
+        //     url: "/admin",
+        //     label: "Administrador"
+        // },
         {
-            url: "/",
-            label: "Home"
-        },
-        {
-            url: "/eventos",
-            label: "Eventos"
-        },
-        {
-            url: "/paises",
-            label: "Paises"
-        },
-        {
-            url: "/admin",
-            label: "Administrador"
+            url: "/formulario",
+            label: "Formulario"
         }
     ]
 
