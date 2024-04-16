@@ -167,9 +167,11 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                 </div>
             ) : (
                 <div className="success-container scale-[0.90] sm:scale-100 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:translate-x-[0px] sm:translate-y-[0px] sm:left-[10%] sm:top-[17%] lg:left-[15%] flex gap-3 flex-col">
-                    <h2 className="sm:text-lg">¡Formulario enviado con éxito!, por favor se responsable y no hagas spam :(</h2>
-                    <p className="sm:text-lg">Te esperamos para que nos acompanes en este maravilloso evento</p>
-                    <Button handleOnClick={handleResetForm} label="Enviar otro formulario"/>
+                    <h2 className="sm:text-lg">¡Formulario enviado con éxito!, por favor se responsable y no hagas spam :(/Форма успешно отправлена!
+                        будьте добры не спамить, пожалуйста :(
+                    </h2>
+                    <p className="sm:text-lg">Te esperamos para que nos acompañes en este maravilloso evento/Ждём вас на нашем незабываемом мероприятии!</p>
+                    <Button handleOnClick={handleResetForm} label="Enviar otro formulario/отправить другую форму"/>
                 </div>
             )}
         </div>
