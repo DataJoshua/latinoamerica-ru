@@ -46,7 +46,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
     };
 
     const maskOnlyCirilicLetters = (rawValue) => {
-        return rawValue.replace(/[^а-я\s]/i, "");
+        return rawValue.replace(/[^а-я\s]/gi, "");
     }
 
     const handleFirstNameChange = (e) => {
