@@ -135,6 +135,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                             <select
                                 value={university}
                                 onChange={handleUniversityChange}
+                                required
                             >
                                 {universidades.map((option, index) => (
                                     <option key={index} value={option.value}>{option.label}</option>
@@ -146,6 +147,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                             <select
                                 value={attendDay}
                                 onChange={(e) => setAttendDay(e.target.value)}
+                                required
                             >
                                 <option value="">Seleccione un día</option>
                                 <option value="Día 1">Día 1/День1</option>
