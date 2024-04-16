@@ -8,6 +8,7 @@ import img5 from "../assets/imagesF/img5.jpeg";
 import img6 from "../assets/imagesF/img6.jpeg";
 import img7 from "../assets/imagesF/img7.jpeg";
 import img8 from "../assets/imagesF/img9.jpeg";
+import img9 from "../assets/imagesF/img10.jpeg";
 
 import "../styles/Carousel.css";
 
@@ -71,6 +72,14 @@ const FormPage = () => {
         },
         {
             image: img8,
+            author: 'LATINOS',
+            title: 'DIA DE lATINOAMERICA',
+            topic: '',
+            description:
+                'Te esparamos, no faltes :)'
+        },
+        {
+            image: img9,
             author: 'LATINOS',
             title: 'DIA DE lATINOAMERICA',
             topic: '',
