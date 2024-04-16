@@ -13,6 +13,19 @@ function Carousel({ images }) {
     const SliderDomRef = useRef(null);
     const thumbnailBorderDomRef = useRef(null);
 
+    const [isFormActive, setIsFormActive] = useState(false)
+    const [isTitleActive, setIsTitleActive] = useState(true)
+
+    const handleOnFormActive = () => {
+        setIsFormActive(true)
+        setIsTitleActive(false)
+    }
+
+    const handleOnFormDismiss = () => {
+        setIsFormActive(false)
+        setIsTitleActive(true)
+    }
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -83,8 +96,8 @@ function Carousel({ images }) {
 
     return (
         <div className="carousel" ref={carouselDomRef}>
-            <Form/>
-            <Title/>
+            <Form isActive={isFormActive} handleOnFormDismiss={handleOnFormDismiss}/>
+            <Title isActive={isTitleActive} handleOnFormActive={handleOnFormActive}/>
             <div className="list" ref={SliderDomRef}>
                 {images.map((image, index) => (
                     <CarouselItem

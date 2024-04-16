@@ -1,8 +1,8 @@
 import "../styles/button.css"
-const Button = ({label, handleOnClick = ()=> {}, type = "button"}) => {
+const Button = ({label, handleOnClick = ()=> {}, type = "button", removeHover = false, extraClass = ""}) => {
   return <button
     type={type}
-    className="button hover:bg-transparent border border-slate-200 hover:text-slate-900 hover:border hover:border-slate-800 transition"
+    className={`button ${extraClass} ${removeHover ? "" : "hover:bg-transparent hover:text-slate-900 hover:border hover:border-slate-800"} border border-slate-400 transition`}
     onClick={handleOnClick}
   >
     {label}

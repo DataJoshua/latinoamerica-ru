@@ -171,6 +171,11 @@ header a {
     }
 }
 
+.carousel-title .content .des pre {
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.832);
+}
+
 /* .carousel-title .content .title {
     animation-delay: 1.2s !important;
 }
@@ -178,10 +183,7 @@ header a {
 .carousel-title .content .topic {
     animation-delay: 1.4s !important;
 }
-
-.carousel-title .content .des {
-    animation-delay: 1.6s !important;
-} */
+*./
 
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img {

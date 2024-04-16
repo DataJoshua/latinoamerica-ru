@@ -9,7 +9,7 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function Form() {
+function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -100,7 +100,7 @@ function Form() {
     };
 
     return (
-        <div className="">
+        <div className={`${isActive ? "" : "hidden"} lg:block`}>
             {!formSubmitted ? (
                 <div className="form-container scale-[0.90] sm:scale-100 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:translate-x-[0px] sm:translate-y-[0px] sm:left-[10%] sm:top-[17%] lg:left-[15%]">
                     <h1 className="font-bold text-center text-lg py-1">Registrate, te esperamos :)</h1>
@@ -153,7 +153,10 @@ function Form() {
                                 <option value="Ambos días">Ambos días/Оба дня</option>
                             </select>
                         </div>
-                        {isLoading ? <Spinner isSmall/> : <Button type="submit" label="Enviar" />}
+                        {isLoading ? <Spinner isSmall/> : <Button type="submit" label="Enviar / Отправить" />}
+                        <div className="lg:hidden w-full">
+                            <Button label="Ver el Horario / Посмотреть расписание" extraClass="w-full" handleOnClick={handleOnFormDismiss}/>
+                        </div>
                     </form>
                 </div>
             ) : (
