@@ -59,7 +59,7 @@ const Title = ({ handleOnFormActive, isActive }) => {
           <div className="show-text-animation title text-4xl lg:text-6xl" style={{animationDelay: "1.4s"}}>{content[currentState].title}</div>
           <div className="show-text-animation topic" style={{animationDelay: "1.6s"}}>{content[currentState].topic}</div>
           <article className={`${isActive ? "" : "hidden"} lg:block`}>
-            <div className="show-text-animation max-w-sm des text-md sm:block mt-5">
+            <div className="show-text-animation max-w-sm des text-md sm:text-[17px] sm:block mt-5">
               <pre>{content[currentState].description}</pre>
               <div className="lg:hidden mt-5">
                 <Button label={content[currentState].register} handleOnClick={handleOnFormActive} removeHover/>
