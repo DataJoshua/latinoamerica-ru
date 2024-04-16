@@ -102,7 +102,7 @@ function Carousel({ images }) {
                 {images.map((image, index) => (
                     <CarouselItem
                         key={index}
-                        image={image.image}
+                        image={image}
                     />
                 ))}
             </div>
@@ -110,8 +110,7 @@ function Carousel({ images }) {
                 {images.map((image, index) => (
                     <ThumbnailItem
                         key={index}
-                        image={image.image}
-                        title={image.title}
+                        image={image}
                     />
                 ))}
             </div>

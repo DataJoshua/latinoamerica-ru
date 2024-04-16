@@ -13,83 +13,8 @@ import img9 from "../assets/imagesF/img10.jpeg";
 import "../styles/Carousel.css";
 
 const FormPage = () => {
-    const images = [
-        {
-            image: img1,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img2,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img3,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img4,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img5,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img6,
-            author: 'LATINOS',
-            title: 'DIA DE LATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img7,
-            author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img8,
-            author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
-        {
-            image: img9,
-            author: 'LATINOS',
-            title: 'DIA DE lATINOAMERICA',
-            topic: '',
-            description:
-                'Te esparamos, no faltes :)'
-        },
+    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
-
-
-    ];
     return (
         <div>
             <Carousel images={images}/>
