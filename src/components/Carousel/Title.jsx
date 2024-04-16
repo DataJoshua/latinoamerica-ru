@@ -56,7 +56,7 @@ const Title = ({ handleOnFormActive, isActive }) => {
             </div>
           </article>
           <div className="show-text-animation author" style={{animationDelay: "1.2s"}}>{content[currentState].author}</div>
-          <div className="show-text-animation title text-4xl md:text-6xl" style={{animationDelay: "1.4s"}}>{content[currentState].title}</div>
+          <div className="show-text-animation title text-4xl lg:text-6xl" style={{animationDelay: "1.4s"}}>{content[currentState].title}</div>
           <div className="show-text-animation topic" style={{animationDelay: "1.6s"}}>{content[currentState].topic}</div>
           <article className={`${isActive ? "" : "hidden"} lg:block`}>
             <div className="show-text-animation max-w-sm des text-md sm:block mt-5">
