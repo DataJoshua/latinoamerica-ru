@@ -48,20 +48,24 @@ const Title = ({ handleOnFormActive, isActive }) => {
     <>
       <div className="carousel-title" key={content[currentState].title}>
         <div className="content absolute z-[1000] max-w-sm sm:max-w-[600px] top-[30px] md:top-[5%] left-[30px] lg:left-[50%] text-white">
-          <div className={`${isActive ? "" : "hidden"} lg:block show-text-animation my-5`}>
-            {currentState === SPANISH ?
-                <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToRussian}> Читать на русском </button> 
-                : <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToSpanish} > Leer en Español </button>}
-          </div>
+          <article className={`${isActive ? "" : "hidden"} lg:block`}>
+            <div className="show-text-animation my-5">
+              {currentState === SPANISH ?
+                  <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToRussian}> Читать на русском </button> 
+                  : <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToSpanish} > Leer en Español </button>}
+            </div>
+          </article>
           <div className="show-text-animation author" style={{animationDelay: "1.2s"}}>{content[currentState].author}</div>
           <div className="show-text-animation title text-4xl md:text-6xl" style={{animationDelay: "1.4s"}}>{content[currentState].title}</div>
           <div className="show-text-animation topic" style={{animationDelay: "1.6s"}}>{content[currentState].topic}</div>
-          <div className={`${isActive ? "" : "hidden"} lg:block show-text-animation max-w-sm des text-md sm:block mt-5`}>
-            <pre>{content[currentState].description}</pre>
-            <div className="lg:hidden mt-5">
-              <Button label={content[currentState].register} handleOnClick={handleOnFormActive} removeHover/>
+          <article className={`${isActive ? "" : "hidden"} lg:block`}>
+            <div className="show-text-animation max-w-sm des text-md sm:block mt-5">
+              <pre>{content[currentState].description}</pre>
+              <div className="lg:hidden mt-5">
+                <Button label={content[currentState].register} handleOnClick={handleOnFormActive} removeHover/>
+              </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </>
@@ -69,4 +73,3 @@ const Title = ({ handleOnFormActive, isActive }) => {
 };
 
 export default Title;
-
