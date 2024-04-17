@@ -20,13 +20,11 @@ const Title = ({ handleOnFormActive, isActive }) => {
       topic: "",
       description: "25 Апреля\n\n" +
           "10:00 - 13:00  Конференция о психическом \n               здоровье\n" +
-          "13:00 - 17:00  Спортивный день\n" +
-          "Молниеносный турнир по футболу 5 и волейболу\n\n" +
+          "13:00 - 17:00  Спортивный день \n               Турнир по футболу\n\n" +
           "26 Апреля\n\n" +
-          "16:00 - 17:00 Павильон о латиноамериканской \n              культуре\n" +
-          "17:00 - 18:00 Фестиваль \"День Латинской Америки\"\n" +
-          "Культурные демонстрации",
-      register: "Хочу присутствовать!" 
+          "16:00 - 17:00 Выставка о латинской культуре \n" +
+          "17:00 - 19:00 Концерт \"День Латинской Америки\"\n",
+      register: "Хочу присутствовать!"
     },
     {
       author: "LATINOS",
@@ -40,7 +38,7 @@ const Title = ({ handleOnFormActive, isActive }) => {
           "16:00 - 17:00 Pabellón sobre la cultura latina.\n" +
           "17:00 - 18:00 Festival \"Día de Latinoamérica\"\n" +
           "Demostraciones culturales.",
-      register: "Quiero Asistir!" 
+      register: "Quiero Asistir!"
     }
   ]
 
@@ -51,7 +49,7 @@ const Title = ({ handleOnFormActive, isActive }) => {
           <article className={`${isActive ? "" : "hidden"} lg:block`}>
             <div className="show-text-animation my-5">
               {currentState === SPANISH ?
-                  <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToRussian}> Читать на русском </button> 
+                  <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToRussian}> Читать на русском </button>
                   : <button className="bg-slate-100 px-3 py-2 rounded text-black hover:underline" onClick={handleToSpanish} > Leer en Español </button>}
             </div>
           </article>
