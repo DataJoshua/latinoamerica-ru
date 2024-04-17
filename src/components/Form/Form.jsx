@@ -118,7 +118,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                                 required/>
                         </div>
                         <div className="form-group">
-                            <label>Apellido/Фамиля:</label>
+                            <label>Apellido/Фамилия:</label>
                             <input
                                 type="text"
                                 value={maskOnlyCirilicLetters(lastName)}
