@@ -19,10 +19,9 @@ const Title = ({ handleOnFormActive, isActive }) => {
       title: "День Латинской Америки",
       topic: "",
       description: "25 Апреля\n\n" +
-          "10:00 - 13:00  Конференция о психическом \n               здоровье\n" +
           "13:00 - 17:00  Спортивный день \n               Турнир по футболу\n\n" +
           "26 Апреля\n\n" +
-          "16:00 - 17:00 Выставка о латинской культуре \n" +
+          "16:00 - 17:00 Выставка \"Латинская Америка\"  \n" +
           "17:00 - 19:00 Концерт \"День Латинской Америки\"\n",
       register: "Хочу присутствовать!"
     },
@@ -30,14 +29,12 @@ const Title = ({ handleOnFormActive, isActive }) => {
       author: "LATINOS",
       title: "DIA DE LATINOAMERICA",
       topic: "",
-      description: "25 DE ABRIL(25 Апреля)\n\n" +
-          "10:00 - 13:00  Conferencia sobre salud mental.\n" +
+      description: "25 DE ABRIL\n\n" +
           "13:00 - 17:00  Jornada deportiva\n" +
-          "Torneo relámpago de futbol 5 y voleibol.\n\n" +
+          "Torneo relámpago de futbol\n\n" +
           "26 DE ABRIL\n\n" +
-          "16:00 - 17:00 Pabellón sobre la cultura latina.\n" +
-          "17:00 - 18:00 Festival \"Día de Latinoamérica\"\n" +
-          "Demostraciones culturales.",
+          "16:00 - 17:00 Pabellón \"America Latina\" \n" +
+          "17:00 - 19:00 Concierto \"Día de Latinoamérica\"\n",
       register: "Quiero Asistir!"
     }
   ]
