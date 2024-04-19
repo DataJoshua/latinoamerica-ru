@@ -9,11 +9,12 @@ import img6 from "../assets/imagesF/img6.jpeg";
 import img7 from "../assets/imagesF/img7.jpeg";
 import img8 from "../assets/imagesF/img9.jpeg";
 import img9 from "../assets/imagesF/img10.jpeg";
+import img10 from "../assets/imagesF/img11.jpeg";
 
 import "../styles/Carousel.css";
 
 const FormPage = () => {
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
     return (
         <div>
