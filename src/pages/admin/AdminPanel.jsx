@@ -1,7 +1,9 @@
+import NewEventForm from "./NewEventForm";
+
 const AdminPanel = () => {
   return ( 
     <>
-      <h1>Hello there Admin</h1>
+      <NewEventForm/>
     </>
   )
 }
