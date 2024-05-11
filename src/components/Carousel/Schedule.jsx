@@ -33,7 +33,7 @@ const Schedule = ({ localeState }) => {
       title: "«Основные проблемы адаптации для иностранных студентов»",
       place: "Место проведения: Институт психологии и образования КФУ, аудитория 105",
       address: "Адрес: г. Казань, улица Межлаука 1.",
-      description: "Регистрация для гостей и зрителей до 19 мая 2024 г до 20:00",
+      description: "регистрация будет отправлена потом",
       activities: [{hour: "в 16:00", description: "круглый стол: «Основные проблемы, с которыми сталкиваются студенты из Латинской Америки в процессе адаптации в России» в рамках X Международного форума по педагогическому образованию в КФУ (гибридный формат - с последовательным переводом)"}]
     }
   ],
@@ -42,8 +42,8 @@ const Schedule = ({ localeState }) => {
       id: 1,
       date: "18 de mayo de 2024",
       title: "«MiniFútbol»",
-      place: "Lugar: Complejo Deportivo de la Universidad Federal de Kazán (gimnasio)",
-      address: "Dirección: Calle Profesor Nujiná, 2, Kazán, Rusia",
+      place: "Lugar: KSK KFU UNICS (sala para deportes)",
+      address: "Dirección: Kazan, calle Profesor Nuzhin, 2",
       description: "Registro para invitados y espectadores hasta el 12 de mayo de 2024 a las 20:00",
       activities: [
         {
@@ -76,7 +76,7 @@ const Schedule = ({ localeState }) => {
       title: "«Principales problemas de adaptación para estudiantes extranjeros»",
       place: "Lugar: Auditorio 105 del Instituto de Psicología y Educación de la Universidad Federal de Kazán",
       address: "Dirección: Calle Mezhlauka, 1, Kazán, Rusia",
-      description: "Registro para invitados y espectadores hasta el 19 de mayo de 2024 a las 20:00",
+      description: "El registro se enviara despues",
       activities: [
         {
           hour: "a las 16:00",
