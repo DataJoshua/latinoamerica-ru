@@ -42,7 +42,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
 
     const maskPhoneNumber = (rawPhoneNumber) => {
         return rawPhoneNumber.replace(/[A-Za-z]/g, "")
-                             .replace(/[!@#$%^&*_-]/g, "");
+                             .replace(/[+!@#$%^&*_-]/g, "");
     };
 
     const maskOnlyCirilicLetters = (rawValue) => {
@@ -110,7 +110,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                     <p className="animate-pulse py-2 text-red-800 text-md">Por favor llenar el nombre y apellido solo en <span className="font-bold">Ruso</span></p>
                     <form onSubmit={handleSubmit} className="form">
                         <div className="form-group">
-                            <label>Nombre/Имя:</label>
+                            <label>Nombres/Имя:</label>
                             <input
                                 type="text"
                                 value={maskOnlyCirilicLetters(firstName)}
@@ -118,7 +118,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                                 required/>
                         </div>
                         <div className="form-group">
-                            <label>Apellido/Фамилия:</label>
+                            <label>Apellidos/Фамилия:</label>
                             <input
                                 type="text"
                                 value={maskOnlyCirilicLetters(lastName)}
