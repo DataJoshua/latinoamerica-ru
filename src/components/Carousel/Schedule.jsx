@@ -53,34 +53,34 @@ const Schedule = ({ localeState }) => {
       ]
     },
     {
-      "id": 2,
-      "date": "24 de mayo de 2024",
-      "title": "«Viaje por América Latina»",
-      "place": "Lugar: Salón de Actos del Instituto de Filología y Comunicación Intercultural de la Universidad Federal de Kazán",
-      "address": "Dirección: Calle Tartaristán, 2, Kazán, Rusia",
-      "description": "Registro para invitados y espectadores hasta el 19 de mayo de 2024 a las 20:00",
-      "activities": [
+      id: 2,
+      date: "24 de mayo de 2024",
+      title: "«Viaje por América Latina»",
+      place: "Lugar: Salón de Actos del Instituto de Filología y Comunicación Intercultural de la Universidad Federal de Kazán",
+      address: "Dirección: Calle Tartaristán, 2, Kazán, Rusia",
+      description: "Registro para invitados y espectadores hasta el 19 de mayo de 2024 a las 20:00",
+      activities: [
         {
-          "hour": "a las 15:30",
-          "description": "Exposición interactiva: Conociendo América Latina"
+          hour: "a las 15:30",
+          description: "Exposición interactiva: Conociendo América Latina"
         },
         {
-          "hour": "a las 16:30",
-          "description": "Concierto festivo"
+          hour: "a las 16:30",
+          description: "Concierto festivo"
         }
       ]
     },
     {
-      "id": 3,
-      "date": "29 de mayo de 2024",
-      "title": "«Principales problemas de adaptación para estudiantes extranjeros»",
-      "place": "Lugar: Auditorio 105 del Instituto de Psicología y Educación de la Universidad Federal de Kazán",
-      "address": "Dirección: Calle Mezhlauka, 1, Kazán, Rusia",
-      "description": "Registro para invitados y espectadores hasta el 19 de mayo de 2024 a las 20:00",
-      "activities": [
+      id: 3,
+      date: "29 de mayo de 2024",
+      title: "«Principales problemas de adaptación para estudiantes extranjeros»",
+      place: "Lugar: Auditorio 105 del Instituto de Psicología y Educación de la Universidad Federal de Kazán",
+      address: "Dirección: Calle Mezhlauka, 1, Kazán, Rusia",
+      description: "Registro para invitados y espectadores hasta el 19 de mayo de 2024 a las 20:00",
+      activities: [
         {
-          "hour": "a las 16:00",
-          "description": "Mesa redonda: Principales problemas que enfrentan los estudiantes de América Latina durante su adaptación en Rusia en el marco del X Foro Internacional de Educación Pedagógica en la Universidad Federal de Kazán (formato híbrido - con traducción secuencial)"
+          hour: "a las 16:00",
+          description: "Mesa redonda: Principales problemas que enfrentan los estudiantes de América Latina durante su adaptación en Rusia en el marco del X Foro Internacional de Educación Pedagógica en la Universidad Federal de Kazán (formato híbrido - con traducción secuencial)"
         }
       ]
     }
@@ -92,7 +92,7 @@ const Schedule = ({ localeState }) => {
         {events[localeState].map((val, index) => (
           <>
             <h2 id={`accordion-collapse-heading-${index}`}>
-              <button type="button" className={`flex items-center justify-between w-full p-5 font-medium border ${val.id === 3 ? "" : "border-b-0"} border-gray-200 ${index == 0 ? "rounded-t-md" : ""} focus:ring-4 focus:ring-gray-200 gap-3`} data-accordion-target={`#accordion-collapse-body-${index}`} aria-expanded="true" aria-controls={`accordion-collapse-body-${index}`}>
+              <button type="button" className={`flex items-center justify-between w-full p-5 font-medium border ${val.id === 3 ? "" : "border-b-0"} border-gray-200 ${index === 0 ? "rounded-t-md" : ""} focus:ring-4 focus:ring-gray-200 gap-3`} data-accordion-target={`#accordion-collapse-body-${index}`} aria-expanded="true" aria-controls={`accordion-collapse-body-${index}`}>
                 <h1 className="text-white font-bold text-left">{val.date} {val.title}</h1>
                 <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5 5 1 1 5"/>
