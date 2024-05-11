@@ -20,10 +20,14 @@ header a {
 
 /* carousel */
 .carousel {
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
     width: auto;
-    overflow: hidden;
     position: relative;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
 }
 
 .carousel .list .item {
