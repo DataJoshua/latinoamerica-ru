@@ -14,9 +14,10 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [university, setUniversity] = useState('');
+    const [occupation, setOccupation] = useState('');
     const [attendDay, setAttendDay] = useState('');
-    const [formSubmitted, setFormSubmitted] = useState(false); // Estado para controlar si el formulario ha sido enviado
-    const [isLoading, setIsLoading] = useState(false)
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const getCurrentDate = (separator = '-') => {
         let newDate = new Date();
@@ -38,6 +39,10 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
 
     const handleUniversityChange = (e) => {
         setUniversity(e.target.value);
+    }
+
+    const handleOccupationChange = (e) => {
+        setOccupation(e.target.value);
     }
 
     const maskPhoneNumber = (rawPhoneNumber) => {
@@ -74,6 +79,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                     Apellido: lastName,
                     Telefono: phoneNumber,
                     Universidad: university,
+                    Ocupacion: occupation,
                     "Dia 1": day1Value,
                     "Dia 2": day2Value,
                     Fecha: getCurrentDate()
@@ -99,6 +105,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
         setLastName('');
         setPhoneNumber('');
         setUniversity('');
+        setOccupation('');
         setAttendDay('');
         setFormSubmitted(false);
     };
@@ -145,6 +152,15 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                                     <option key={index} value={option.value}>{option.label}</option>
                                 ))}
                             </select>
+                        </div>
+                        <div className="form-group">
+                            <label>Ocupacion/Занятие:</label>
+                            <input
+                                type="text"
+                                value={occupation}
+                                onChange={handleOccupationChange}
+                                required
+                            />
                         </div>
                         <div className="form-group">
                             <label>Asistiré el día/Я буду присутствовать в день:</label>
