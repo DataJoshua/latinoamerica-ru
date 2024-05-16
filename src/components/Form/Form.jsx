@@ -107,7 +107,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                     Apellido: lastName,
                     Telefono: phoneNumber,
                     Universidad: getUniversityValue(),
-                    "Ocupación": noUniversity ? ocupacion : "Пустой",
+                    "Ocupacion": noUniversity ? ocupacion : "Пустой",
                     "Dia 1": day1Value,
                     "Dia 2": day2Value,
                     Fecha: getCurrentDate()
