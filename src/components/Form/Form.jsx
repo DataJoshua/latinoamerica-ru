@@ -17,6 +17,22 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
     const [attendDay, setAttendDay] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false); // Estado para controlar si el formulario ha sido enviado
     const [isLoading, setIsLoading] = useState(false)
+    const [noUniversity, setNoUniversity] = useState(false)
+    const [otherUniversity, setOtherUniversity] = useState(false)
+    const [customUni, setCustomUni] = useState("")
+
+    const [ocupacion, setOcupacion] = useState("")
+
+    const handleOcupacionChange = (e) => {
+        setOcupacion(e.target.value)
+    }
+    
+    const getUniversityValue = () => {
+        if(otherUniversity) return customUni
+        if(noUniversity) return "Пустой"
+        
+        return university
+    }
 
     const getCurrentDate = (separator = '-') => {
         let newDate = new Date();
@@ -38,6 +54,23 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
 
     const handleUniversityChange = (e) => {
         setUniversity(e.target.value);
+
+        if(e.target.value === "NONE_FLAG") {
+            setNoUniversity(true)
+            setOtherUniversity(false)
+        }
+        else if(e.target.value === "OTHER_UNI_FLAG") {
+            setOtherUniversity(true)
+            setNoUniversity(false)
+        }
+        else {
+            setNoUniversity(false)
+            setOtherUniversity(false)
+        }
+    }
+
+    const handleCustomUni = (e) => {
+        setCustomUni(e.target.value)
     }
 
     const maskPhoneNumber = (rawPhoneNumber) => {
@@ -73,7 +106,8 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                     Nombre: firstName,
                     Apellido: lastName,
                     Telefono: phoneNumber,
-                    Universidad: university,
+                    Universidad: getUniversityValue(),
+                    "Ocupación": noUniversity ? ocupacion : "Пустой",
                     "Dia 1": day1Value,
                     "Dia 2": day2Value,
                     Fecha: getCurrentDate()
@@ -100,6 +134,8 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
         setPhoneNumber('');
         setUniversity('');
         setAttendDay('');
+        setOcupacion('')
+        setCustomUni('')
         setFormSubmitted(false);
     };
 
@@ -146,6 +182,26 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                                 ))}
                             </select>
                         </div>
+                        {otherUniversity && (
+                            <div className="form-group">
+                                <label>Nombre de la Universidad/Ваш Университет:</label>
+                                <input type="text"
+                                       value={customUni}
+                                       onChange={handleCustomUni}
+                                       required
+                                />
+                            </div>
+                        )}
+                        {noUniversity && (
+                            <div className="form-group">
+                                <label>Ocupación/Кем работаете:</label>
+                                <input type="text"
+                                       value={ocupacion}
+                                       onChange={handleOcupacionChange}
+                                       required
+                                />
+                            </div>
+                        )}
                         <div className="form-group">
                             <label>Asistiré el día/Я буду присутствовать в день:</label>
                             <select
@@ -154,9 +210,7 @@ function Form({ isActive, handleOnFormDismiss = ()=> {} }) {
                                 required
                             >
                                 <option value="">Seleccione un día</option>
-                                <option value="Día 1">Día 1/День1</option>
                                 <option value="Día 2">Día 2/День2</option>
-                                <option value="Ambos días">Ambos días/Оба дня</option>
                             </select>
                         </div>
                         {isLoading ? <Spinner isSmall/> : <Button type="submit" label="Enviar / Отправить" />}
